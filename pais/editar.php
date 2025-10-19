@@ -12,6 +12,7 @@ $pais = $result->fetch_assoc();
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -56,4 +57,22 @@ if (isset($_POST['salvar'])) {
 }
 ?>
 </body>
+
+<!-- Footer -->
+<footer class="footer">
+  <h2 class="footer-logo">Clement's World</h2>
+
+ 
+  <div class="footer-social">
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/Gigiovh" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <p class="footer-copy">
+    Clement's World ©2025 Todos os direitos reservados a <a href="https://github.com/Gigiovh">Gigiovh</a>
+    <span class="heart">★</span> 
+  </p>
+</footer>
 </html>
