@@ -75,4 +75,23 @@ if (isset($_POST['salvar'])) {
 }
 ?>
 </body>
+
+<!-- Footer -->
+<footer class="footer">
+  <h2 class="footer-logo">Clement's World</h2>
+
+
+  <div class="footer-social">
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/Gigiovh" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <p class="footer-copy">
+    Clement's World ©2025 Todos os direitos reservados a <a href="https://github.com/Gigiovh">Gigiovh</a>
+    <span class="heart">★</span> 
+  </p>
+</footer>
 </html>
