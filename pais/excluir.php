@@ -2,7 +2,6 @@
 include("../conexao.php");
 $id = $_GET['id'];
 
-// Não pode excluir  cidades vinculadas aos países 
 $res = $conn->query("SELECT * FROM tb_cidade WHERE id_pais=$id");
 if ($res->num_rows > 0) {
     echo "<script>alert('Não é possível excluir: há cidades vinculadas a este país!'); window.location='listar.php';</script>";
