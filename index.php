@@ -13,12 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color:#fff9f9">
+<body>
 
     <!-- Baner -->
     <div class="banner-container">
         <div class="banner-content">
-            <h1 class="banner-title">Clemente World</h1>
+            <h1 class="banner-title">Clement's World</h1>
+            <p>Conheça novas cidades</p>
         </div>
 
 
