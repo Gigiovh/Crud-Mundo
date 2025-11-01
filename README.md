@@ -4,6 +4,8 @@ Projeto desenvolvido na disciplina Desenvolvimento Web, com o objetivo de aplica
 
 O sistema permite gerenciar informações de países e das cidades vinculadas a cada um deles. Na página inicial, o usuário encontra algumas informações gerais sobre países. Já pelo menu, é possível acessar todos os países cadastrados e visualizar as cidades relacionadas, além de adicionar novas cidades, editar ou excluir as existentes.
 
+Para acessar as API's o usuario deve acessa-las no menu
+
 ## 🌐 APIs Utilizadas
 
 | API | Finalidade |
