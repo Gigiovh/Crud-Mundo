@@ -2,7 +2,7 @@
 include("../conexao.php");
 
 define('OPENWEATHER_API_KEY', '06cb432fb3eed4d1136c5929460bd323');
-
+//API de clima
 function obterClimaPorCidade($cidadeNome, $paisNome, $apiKey) {
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($cidadeNome) . "," . urlencode($paisNome) . "&appid=" . $apiKey . "&units=metric&lang=pt_br";
     
@@ -53,7 +53,7 @@ function obterClimaPorCidade($cidadeNome, $paisNome, $apiKey) {
 </head>
 
 <body>
-
+    <!-- Navegação -->
     <nav class="test">
         <ul>
             <li><a href="../index.php">Home</a></li>
