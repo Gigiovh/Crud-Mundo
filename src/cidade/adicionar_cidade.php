@@ -13,22 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script>
-function validar() {
-    let nome = document.forms["formCidade"]["nome"].value.trim();
-    let populacao = document.forms["formCidade"]["populacao"].value.trim();
-    let pais = document.forms["formCidade"]["id_pais"].value;
 
-    if (!nome || !populacao || pais === "") {
-        alert("Preencha todos os campos!");
-        return false;
-    }
-    if (isNaN(populacao) || populacao <= 0) {
-        alert("A população deve ser um número positivo!");
-        return false;
-    }
-}
-</script>
 </head>
 <body>
     
@@ -108,4 +93,20 @@ if (isset($_POST['enviar'])) {
     <span class="heart">★</span> 
   </p>
 </footer>
+<script>
+function validar() {
+    let nome = document.forms["formCidade"]["nome"].value.trim();
+    let populacao = document.forms["formCidade"]["populacao"].value.trim();
+    let pais = document.forms["formCidade"]["id_pais"].value;
+
+    if (!nome || !populacao || pais === "") {
+        alert("Preencha todos os campos!");
+        return false;
+    }
+    if (isNaN(populacao) || populacao <= 0) {
+        alert("A população deve ser um número positivo!");
+        return false;
+    }
+}
+</script>
 </html>
