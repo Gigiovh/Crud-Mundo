@@ -111,6 +111,7 @@
             <span class="heart">★</span>
         </p>
     </footer>
+     <script src="js.js"></script>
 </body>
 
 </html>
