@@ -17,24 +17,10 @@ $cidade = $result->fetch_assoc();
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script>
-function validar() {
-    let nome = document.forms["formCidade"]["nome"].value.trim();
-    let populacao = document.forms["formCidade"]["populacao"].value.trim();
-    let pais = document.forms["formCidade"]["id_pais"].value;
 
-    if (!nome || !populacao || pais === "") {
-        alert("Preencha todos os campos!");
-        return false;
-    }
-    if (isNaN(populacao) || populacao <= 0) {
-        alert("A população deve ser um número positivo!");
-        return false;
-    }
-}
-</script>
 </head>
 <body>
+    <!-- Form de edição de cidade -->
 <h1>Editar Cidade</h1>
 <form name="formCidade" method="post" onsubmit="return validar()">
     <input type="hidden" name="id_cidade" value="<?= $cidade['id_cidade'] ?>">
@@ -58,7 +44,7 @@ function validar() {
 
     <button type="submit" name="salvar">Salvar Alterações</button>
 </form>
-
+    <!-- Php -->
 <?php
 if (isset($_POST['salvar'])) {
     $id = $_POST['id_cidade'];
@@ -94,5 +80,20 @@ if (isset($_POST['salvar'])) {
     <span class="heart">★</span> 
   </p>
 </footer>
-</html>
+<script>
+function validar() {
+    let nome = document.forms["formCidade"]["nome"].value.trim();
+    let populacao = document.forms["formCidade"]["populacao"].value.trim();
+    let pais = document.forms["formCidade"]["id_pais"].value;
 
+    if (!nome || !populacao || pais === "") {
+        alert("Preencha todos os campos!");
+        return false;
+    }
+    if (isNaN(populacao) || populacao <= 0) {
+        alert("A população deve ser um número positivo!");
+        return false;
+    }
+}
+</script>
+</html>
