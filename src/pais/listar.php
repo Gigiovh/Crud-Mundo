@@ -1,5 +1,6 @@
 <?php include("../conexao.php"); 
-
+// API
+// Primeiro, vamos verificar e criar as colunas se não existirem
 function verificarECriarColunas($conn) {
     $colunas = [
         'capital' => 'VARCHAR(100) DEFAULT NULL',
@@ -15,11 +16,11 @@ function verificarECriarColunas($conn) {
     }
 }
 
-
+// Executar a verificação/criação das colunas
 verificarECriarColunas($conn);
 
 function completarInformacoesPaisesAPI($conn) {
-
+    // Buscar todos os países do banco que não têm informações completas
     $result = $conn->query("SELECT id_pais, nome FROM tb_pais WHERE capital IS NULL OR moeda IS NULL OR bandeira IS NULL");
     
     if (!$result) {
@@ -58,7 +59,7 @@ function completarInformacoesPaisesAPI($conn) {
             if (is_array($dados) && isset($dados[0])) {
                 $paisData = $dados[0];
                 
-
+                // Extrair informações
                 $capital = isset($paisData['capital'][0]) ? $paisData['capital'][0] : 'Desconhecida';
                 $bandeira = $paisData['flags']['png'] ?? $paisData['flags']['svg'] ?? '';
                 
@@ -71,11 +72,12 @@ function completarInformacoesPaisesAPI($conn) {
                     $moeda = implode(', ', array_filter($moedas));
                 }
                 
-                
+                // Sanitizar dados
                 $capital = mb_substr(trim($capital), 0, 100);
                 $moeda = mb_substr(trim($moeda), 0, 50);
                 $bandeira = mb_substr(trim($bandeira), 0, 255);
-               
+                
+                // Atualizar o país no banco
                 $stmt = $conn->prepare("UPDATE tb_pais SET capital = ?, moeda = ?, bandeira = ? WHERE id_pais = ?");
                 if ($stmt) {
                     $stmt->bind_param("sssi", $capital, $moeda, $bandeira, $idPais);
@@ -108,6 +110,7 @@ function completarInformacoesPaisesAPI($conn) {
     ];
 }
 
+// Processar completar informações se solicitado
 if (isset($_GET['completar']) && $_GET['completar'] == 'true') {
     $resultado = completarInformacoesPaisesAPI($conn);
     
@@ -136,7 +139,9 @@ if (isset($_GET['completar']) && $_GET['completar'] == 'true') {
 </head>
 
 <body>
-
+<!--
+Navgegação
+  -->
     <nav class="test">
         <ul>
             <li><a href="../index.php">Home</a></li>
@@ -184,7 +189,9 @@ if (isset($_GET['completar']) && $_GET['completar'] == 'true') {
             <th>Bandeira</th>
             <th>Ações</th>
         </tr>
-
+<!--
+Puxando API apartir dos países cadastrados
+  -->
         <?php
 $result = $conn->query("SELECT * FROM tb_pais ORDER BY nome");
 
