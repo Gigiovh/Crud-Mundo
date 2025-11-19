@@ -41,6 +41,7 @@
                         <li><a href="cidade/adicionar_cidade.php">Adicionar</a></li>
 
                     </ul>
+                    <li><a href="estatistica.php">Estatistica</a></li>
             </ul>
         </nav>
     </div>
@@ -111,7 +112,6 @@
             <span class="heart">★</span>
         </p>
     </footer>
-     <script src="js.js"></script>
 </body>
 
 </html>
