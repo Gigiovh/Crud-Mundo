@@ -14,12 +14,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script>
+function validar() {
+    let nome = document.forms["formPais"]["nome"].value.trim();
+    let continente = document.forms["formPais"]["continente"].value.trim();
+    let populacao = document.forms["formPais"]["populacao"].value.trim();
+    let idioma = document.forms["formPais"]["idioma"].value.trim();
 
+    if (!nome || !continente || !populacao || !idioma) {
+        alert("Preencha todos os campos corretamente!");
+        return false;
+    }
+    if (isNaN(populacao) || populacao <= 0) {
+        alert("População deve ser um número positivo!");
+        return false;
+    }
+}
+</script>
 </head>
 <body>
-  <!-- 
-Navegação
-  -->
     <nav class="test">
   <ul>
     <li><a href="../index.php">Home</a></li>
@@ -36,6 +49,7 @@ Navegação
         <li><a href="../cidade/adicionar_cidade.php">Adicionar</a></li>
         
       </ul>
+      <li><a href="estatistica.php">Estatistica</a></li>
   </ul>
 </nav>
 <h1 style="  margin-top: 100px;">Adicionar País</h1>
@@ -50,9 +64,7 @@ Navegação
     <input type="text" name="idioma">
     <button type="submit" name="enviar">Salvar</button>
 </form>
-<!--
-Cadastro de paises, inserir valores na tabela
-  -->
+
 <?php
 if (isset($_POST['enviar'])) {
     $nome = $_POST['nome'];
@@ -88,24 +100,4 @@ if (isset($_POST['enviar'])) {
     <span class="heart">★</span> 
   </p>
 </footer>
-<!--
-Validação de prenchimento dos formularios 
-  -->
-<script>
-function validar() {
-    let nome = document.forms["formPais"]["nome"].value.trim();
-    let continente = document.forms["formPais"]["continente"].value.trim();
-    let populacao = document.forms["formPais"]["populacao"].value.trim();
-    let idioma = document.forms["formPais"]["idioma"].value.trim();
-
-    if (!nome || !continente || !populacao || !idioma) {
-        alert("Preencha todos os campos corretamente!");
-        return false;
-    }
-    if (isNaN(populacao) || populacao <= 0) {
-        alert("População deve ser um número positivo!");
-        return false;
-    }
-}
-</script>
 </html>
