@@ -16,6 +16,15 @@ $pais = $result->fetch_assoc();
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script>
+function validar() {
+    let pop = document.forms["formPais"]["populacao"].value;
+    if (isNaN(pop) || pop <= 0) {
+        alert("População inválida!");
+        return false;
+    }
+}
+</script>
 </head>
 <body>
 <h1>Editar País</h1>
@@ -31,9 +40,7 @@ $pais = $result->fetch_assoc();
     <input type="text" name="idioma" value="<?= $pais['idioma'] ?>">
     <button type="submit" name="salvar">Salvar Alterações</button>
 </form>
-<!-- Php
- alterando os paises, fazendo update para atualizar as informações deles
-  -->
+
 <?php
 if (isset($_POST['salvar'])) {
     $nome = $_POST['nome'];
@@ -67,14 +74,5 @@ if (isset($_POST['salvar'])) {
     Clement's World ©2025 Todos os direitos reservados a <a href="https://github.com/Gigiovh">Gigiovh</a>
     <span class="heart">★</span> 
   </p>
-  <script>
-function validar() {
-    let pop = document.forms["formPais"]["populacao"].value;
-    if (isNaN(pop) || pop <= 0) {
-        alert("População inválida!");
-        return false;
-    }
-}
-</script>
 </footer>
 </html>
