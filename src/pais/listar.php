@@ -1,5 +1,5 @@
 <?php include("../conexao.php"); 
-// API
+
 // Primeiro, vamos verificar e criar as colunas se não existirem
 function verificarECriarColunas($conn) {
     $colunas = [
@@ -139,9 +139,7 @@ if (isset($_GET['completar']) && $_GET['completar'] == 'true') {
 </head>
 
 <body>
-<!--
-Navgegação
-  -->
+
     <nav class="test">
         <ul>
             <li><a href="../index.php">Home</a></li>
@@ -158,6 +156,7 @@ Navgegação
                     <li><a href="../cidade/adicionar_cidade.php">Adicionar</a></li>
                 </ul>
             </li>
+            <li><a href="estatistica.php">Estatistica</a></li>
         </ul>
     </nav>
 
@@ -189,9 +188,7 @@ Navgegação
             <th>Bandeira</th>
             <th>Ações</th>
         </tr>
-<!--
-Puxando API apartir dos países cadastrados
-  -->
+
         <?php
 $result = $conn->query("SELECT * FROM tb_pais ORDER BY nome");
 
